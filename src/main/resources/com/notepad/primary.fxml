@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml">
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.notepad.PrimaryController">
 
     <top>
         <MenuBar>
@@ -16,10 +17,15 @@
                 <Menu text="File">
 
                     <items>
-                        <MenuItem text="New"/>
+                        <MenuItem text="New"
+                                  onAction="#newFile"/>
+
                         <MenuItem text="Open"/>
+
                         <MenuItem text="Save"/>
-                        <MenuItem text="Exit"/>
+
+                        <MenuItem text="Exit"
+                                  onAction="#exitApp"/>
                     </items>
 
                 </Menu>
