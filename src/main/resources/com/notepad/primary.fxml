@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.notepad.PrimaryController">
 
+    <!-- TOP MENU -->
     <top>
         <MenuBar>
+
             <menus>
 
                 <Menu text="File">
+                    <items>
+                        <MenuItem text="New" onAction="#newFile"/>
+                        <MenuItem text="Open" onAction="#openFile"/>
+                        <MenuItem text="Save" onAction="#saveFile"/>
+                        <MenuItem text="Save As" onAction="#saveAsFile"/>
+                        <MenuItem text="Exit" onAction="#exitApp"/>
+                    </items>
+                </Menu>
 
-    <items>
-        <MenuItem text="New" onAction="#newFile"/>
-        <MenuItem text="Open" onAction="#openFile"/>
-        <MenuItem text="Save" onAction="#saveFile"/>
-        <MenuItem text="Save As" onAction="#saveAsFile"/>
-        <MenuItem text="Exit" onAction="#exitApp"/>
-    </items>
-
-</Menu>
+                <Menu text="View">
+                    <items>
+                        <CheckMenuItem text="Word Wrap" selected="true" onAction="#toggleWordWrap"/>
+                    </items>
+                </Menu>
 
             </menus>
+
         </MenuBar>
     </top>
 
+    <!-- CENTER TEXT AREA -->
     <center>
-        <TextArea fx:id="textArea"/>
+        <TextArea fx:id="textArea" wrapText="true"/>
     </center>
+
+    <!-- BOTTOM STATUS BAR -->
+    <bottom>
+        <Label fx:id="statusBar" text="Line: 1 | Column: 1"
+               style="-fx-padding: 5px; -fx-background-color: #e0e0e0;"/>
+    </bottom>
 
 </BorderPane>
