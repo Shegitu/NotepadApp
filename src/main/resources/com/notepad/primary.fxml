@@ -16,17 +16,11 @@
 
                 <Menu text="File">
 
-                    <items>
-                        <MenuItem text="New"
-                                  onAction="#newFile"/>
-
-                        <MenuItem text="Open"/>
-
-                        <MenuItem text="Save"/>
-
-                        <MenuItem text="Exit"
-                                  onAction="#exitApp"/>
-                    </items>
+        <MenuItem text="New" onAction="#newFile"/>
+        <MenuItem text="Open" onAction="#openFile"/>
+        <MenuItem text="Save" onAction="#saveFile"/>
+        <MenuItem text="Exit" onAction="#exitApp"/>
+   
 
                 </Menu>
 
