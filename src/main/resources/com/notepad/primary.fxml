@@ -9,7 +9,7 @@
 
     <!-- TOP MENU -->
     <top>
-        <MenuBar>
+        <MenuBar fx:id="menuBar">
 
             <menus>
 
@@ -24,9 +24,17 @@
                 </Menu>
 
                 <Menu text="View">
+
                     <items>
                         <CheckMenuItem text="Word Wrap" selected="true" onAction="#toggleWordWrap"/>
+                        <SeparatorMenuItem/>
+
+                        <CheckMenuItem text="Dark Mode" onAction="#toggleDarkMode"/>
+                        <SeparatorMenuItem/>
+
+                        <MenuItem text="Font Settings" onAction="#openFontDialog"/>
                     </items>
+
                 </Menu>
 
             </menus>
@@ -34,15 +42,16 @@
         </MenuBar>
     </top>
 
-    <!-- CENTER TEXT AREA -->
+    <!-- TEXT AREA -->
     <center>
         <TextArea fx:id="textArea" wrapText="true"/>
     </center>
 
-    <!-- BOTTOM STATUS BAR -->
+    <!-- STATUS BAR -->
     <bottom>
-        <Label fx:id="statusBar" text="Line: 1 | Column: 1"
-               style="-fx-padding: 5px; -fx-background-color: #e0e0e0;"/>
+        <Label fx:id="statusBar"
+               text="Line: 1 | Column: 1"
+               style="-fx-padding: 5px;"/>
     </bottom>
 
 </BorderPane>
