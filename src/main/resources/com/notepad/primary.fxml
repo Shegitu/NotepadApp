@@ -20,6 +20,7 @@
                         <MenuItem text="Save" onAction="#saveFile"/>
                         <MenuItem text="Save As" onAction="#saveAsFile"/>
                         <MenuItem text="Exit" onAction="#exitApp"/>
+                        <MenuItem text="Find &amp; Replace" onAction="#openFindReplace"/>
                     </items>
                 </Menu>
 
@@ -42,10 +43,10 @@
         </MenuBar>
     </top>
 
-    <!-- TEXT AREA -->
-    <center>
-        <TextArea fx:id="textArea" wrapText="true"/>
-    </center>
+    <!-- TAB SYSTEM -->
+<center>
+    <TabPane fx:id="tabPane"/>
+</center>
 
     <!-- STATUS BAR -->
     <bottom>
