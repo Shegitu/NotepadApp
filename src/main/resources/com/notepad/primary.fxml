@@ -7,9 +7,9 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.notepad.PrimaryController">
 
-    <!-- TOP MENU -->
+    <!-- MENU -->
     <top>
-        <MenuBar fx:id="menuBar">
+        <MenuBar>
 
             <menus>
 
@@ -19,41 +19,47 @@
                         <MenuItem text="Open" onAction="#openFile"/>
                         <MenuItem text="Save" onAction="#saveFile"/>
                         <MenuItem text="Save As" onAction="#saveAsFile"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="New Window" onAction="#newWindow"/>
+                        <SeparatorMenuItem/>
                         <MenuItem text="Exit" onAction="#exitApp"/>
                         <MenuItem text="Find &amp; Replace" onAction="#openFindReplace"/>
-                        <MenuItem text="New Window" onAction="#newWindow"/>
                     </items>
                 </Menu>
+                <Menu text="Format">
+    <Menu text="Font">
+        <MenuItem text="Arial" onAction="#setFontArial"/>
+        <MenuItem text="Verdana" onAction="#setFontVerdana"/>
+        <MenuItem text="Times New Roman" onAction="#setFontTimes"/>
+    </Menu>
 
-                <Menu text="View">
+    <Menu text="Text Color">
+        <MenuItem text="Red" onAction="#setTextRed"/>
+        <MenuItem text="Blue" onAction="#setTextBlue"/>
+        <MenuItem text="Black" onAction="#setTextBlack"/>
+    </Menu>
 
-                    <items>
-                        <CheckMenuItem text="Word Wrap" selected="true" onAction="#toggleWordWrap"/>
-                        <SeparatorMenuItem/>
-
-                        <CheckMenuItem text="Dark Mode" onAction="#toggleDarkMode"/>
-                        <SeparatorMenuItem/>
-
-                        <MenuItem text="Font Settings" onAction="#openFontDialog"/>
-                    </items>
-
-                </Menu>
+    <Menu text="Theme">
+        <MenuItem text="Dark" onAction="#setDarkTheme"/>
+        <MenuItem text="Light" onAction="#setLightTheme"/>
+    </Menu>
+</Menu>
 
             </menus>
 
         </MenuBar>
     </top>
 
-    <!-- TAB SYSTEM -->
-<center>
-    <TabPane fx:id="tabPane"/>
-</center>
+    <!-- TABS -->
+    <center>
+        <TabPane fx:id="tabPane"/>
+    </center>
 
     <!-- STATUS BAR -->
     <bottom>
         <Label fx:id="statusBar"
                text="Line: 1 | Column: 1"
-               style="-fx-padding: 5px;"/>
+               style="-fx-padding: 5;"/>
     </bottom>
 
 </BorderPane>
